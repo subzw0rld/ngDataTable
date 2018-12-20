@@ -1,0 +1,41 @@
+{
+  "name": "ng-data-table",
+  "version": "0.0.2",
+  "description": "A Data Table component for Angular 7.x applications that support sorting and filtering of data along with lazyloading.",
+  "author": "Subroto Mukherjee",
+  "license": "MIT",
+  "homepage": "https://github.com/subzw0rld/ngDataTable",
+  "bugs": {
+    "url": "https://github.com/subzw0rld/ngDataTable/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subzw0rld/ngDataTable.git"
+  },
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "~7.0.0",
+    "@angular/core": "~7.0.0",
+    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "ngx-infinite-scroll": "^6.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "ngx-infinite-scroll": "^6.0.1"
+  },
+  "keywords": [
+    "angular7",
+    "typescript",
+    "datagrid",
+    "sorting",
+    "sort",
+    "filter",
+    "filtering",
+    "infinite-scroll",
+    "lazyloading"
+  ]
+}

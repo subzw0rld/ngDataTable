@@ -1,0 +1,15 @@
+<ul id="sortMenu" class="sorter">
+  <li class="list-title sort-item" *ngIf="displaySort">
+    <fa-icon [icon]="sortIcon"></fa-icon>
+    Sort
+    <ul class="sort-menuItem">
+      <li (click)="onItemClick('ascending', 0, 'sort')"><fa-icon [icon]="ascendingIcon"></fa-icon> Ascending</li>
+      <li (click)="onItemClick('descending', 1, 'sort')"><fa-icon [icon]="descendingIcon"></fa-icon> Descending</li>
+    </ul>
+  </li>
+
+  <li class="list-title disabled filter" *ngIf="displayFilter"><fa-icon [icon]="filterIcon"></fa-icon> Filter</li>
+  <li *ngFor="let item of listData;let selectedIndex = index; trackBy:trackingFunction" (click)="onItemClick(item, selectedIndex, 'filter')">
+    {{item}}
+  </li>
+</ul>

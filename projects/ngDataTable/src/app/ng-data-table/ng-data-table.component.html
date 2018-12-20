@@ -1,0 +1,40 @@
+<div class="filters">
+  <span class="filter-item" *ngFor="let item of filterData; let i = index; trackBy:trackByRow" (click)="removeFilter(i)">
+    <span class="filter-label">{{item.value}}</span>
+    <span class="filter-close">
+      <fa-icon [icon]="closeIcon"></fa-icon>
+    </span>
+  </span>
+  <span class="filter-item clear-filter" *ngIf="filterData.length" (click)="removeAllFilters()">
+    <span class="filter-label">Clear All</span>
+    <span class="filter-close">
+      <fa-icon [icon]="closeIcon"></fa-icon>
+    </span>
+  </span>
+</div>
+<div class="tbl-header" click-outside (clickOutside)="handleClickOutside()">
+  <table>
+    <thead>
+      <th *ngFor="let item of header; let i = index; trackBy:trackByRow">
+        {{item.value}}
+        <span *ngIf="item.sort" class="sort" [attr.data-index]="i" (click)="displaySortOptions($event, item.sortKey)">
+          <fa-icon [icon]="sortingOption"></fa-icon>
+        </span>
+      </th>
+    </thead>
+  </table>
+</div>
+<div class="tbl-content" infinite-scroll [scrollWindow]="false" [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance"
+[infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown($event)" (scrolledUp)="onScrollUp($event)">
+  <table>
+    <tbody>
+      <tr *ngFor="let item of tableData; trackBy:trackByRow">
+        <td *ngFor="let data of item | keyvalue; let i = index; trackBy:trackByRow">
+          {{item[header[i].sortKey]}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<list-comp *ngIf="displayList" [displaySort]="displaySortMenuItem" [displayFilter]="displayFilterMenuItem" [listData]="listData"
+  (selectedRow)="onRowSelect($event)"></list-comp>
